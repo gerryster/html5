@@ -1,0 +1,46 @@
+//exec:13
+var OB_srcId = 1053279;
+var OB_PC_enable=true;
+var OB_max_ads = 5;
+var OB_cleanPermalink = true;
+var OB_recMode = "dual";
+
+var OB_openNewTab = false;
+ 
+
+ 
+var obStyleText = '.outbrain-recommendationsFieldset, .outbrain-recommendationsFieldset-ie, .outbrain-recommendationsFieldset-sc{border:none !important;padding:0px !important} .Outbrain_recommendations_legend{display:none;} .outbrain_rec_li {background:url("http://i.cdn.turner.com/cnn/.element/img/3.0/global/red_bull.gif") no-repeat scroll 0 5px transparent;color:#9A9A9A;font:bold 11px/14px arial,Helvetica,Utkal,sans-serif;margin:0;padding:0 0 4px 7px;list-style:none outside none !important;} .recommendations_ul,.recommendations_ul_ie,.recommendations_ul_sc{padding-left:0px !important;} .moreRecommendationsLinkDiv,.moreRecommendationsLinkDiv,.outbrain-table-recommendations-bottom{display:none;} .outbrain_dual_ad_whats_A_class{color:#9A9A9A !important;} .outbrain_dual_ad_whats_class{padding-top:4px !important;} #recommendationsList_0_bottom .rec-src-link {display:none !important;}  .outbrain_rec_li {padding:0 0 8px 7px;}  #outbrain_widget_0 .rec-src-link {display:none !important;}';
+var obStyleSheetContainer = document.getElementsByTagName("head")[0];
+    obStyleSheetContainer = (obStyleSheetContainer!= null)?obStyleSheetContainer:document.getElementById( 'outbrain_manager_helper_div' );
+if( obStyleSheetContainer != null  ){
+	var obStyleSheetElement = document.createElement( "STYLE" );
+	obStyleSheetElement.setAttribute("type", "text/css");
+	if(obStyleSheetElement.styleSheet){// IE
+		obStyleSheetElement.styleSheet.cssText = obStyleText;
+	} else {// w3c
+		var obCssText = document.createTextNode(obStyleText);
+		obStyleSheetElement.appendChild(obCssText);
+	}	
+	obStyleSheetContainer.appendChild( obStyleSheetElement );
+}
+
+var OB_time_counter = "0|10000|0";
+var OB_showRec = true;
+var OB_location_string = "<span class='rec-src-link'> <span class='rec-src-at'> </span>$SOURCE_NAME</span>";
+var OB_displaySameSiteTitle = false;
+ 
+var OB_isOnHeader = false; var OB_add_nofollow = "ads";;
+var OB_self_posts = false;
+var OB_MP_fetch_type = "mv";
+
+ 
+var OB_hook_id = "outbrain_cnn_hook";
+
+
+var OB_RecNumberFetch = 10;
+
+
+var OB_MP_hideTitle = true;
+var OB_raterMode = "none";
+var OB_defaultRecNumber = 5;
+outbrain_customSettings.blogSettingsCB( true );

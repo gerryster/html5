@@ -1,0 +1,51 @@
+{ 
+ 
+var google_ads = new Array(); 
+var google_ad; 
+var google_radlinks = new Array(); 
+var google_radlink; 
+var google_info = new Object(); 
+google_ad = new Object(); 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=BA5BVzqy1TNa6FIGXnQfA35SnDIe4-YcCh4Sm7BfAjbcBoIYyEAEYASD8hM4JKAM4AFCM4vEQYMn2kYjwo-wSoAHBnfbtA7IBC3d3dy5jbm4uY29tyAEB2gE5aHR0cDovL3d3dy5jbm4uY29tLzIwMTAvVEVDSC9tb2JpbGUvMTAvMTIvaXBob25lLjQuZ2xhc3MvqAMB6AOvCOgD5AH1AwIEAAQ&amp;num=1&amp;sig=AGiWqtw2S8R4sKOkVVE1ig2Z0V8QAayOpA&amp;client=ca-cnn-articleonly_js&amp;adurl=http://vilari.com/tracking202/redirect/dl.php%3Ft202id%3D63478%26t202kw%3Dawcontent-iphone%25204%2520gb"; 
+google_ad.visible_url = "www.BidSauce.com"; 
+google_ad.line1 = "iPhone 4 For $26.34?"; 
+google_ad.line2 = "New iPhones are selling as low as"; 
+google_ad.line3 = "$26 today only at online auction."; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 2; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=B0CSbzqy1TNa6FIGXnQfA35SnDLvlrukB-_LzjxbAjbcBsJOYAhACGAIg_ITOCSgDOABQzt2ElgdgyfaRiPCj7BKyAQt3d3cuY25uLmNvbcgBAdoBOWh0dHA6Ly93d3cuY25uLmNvbS8yMDEwL1RFQ0gvbW9iaWxlLzEwLzEyL2lwaG9uZS40LmdsYXNzL8gC2-7vFagDAegDrwjoA-QB9QMCBAAE&amp;num=2&amp;sig=AGiWqtzqeJI2NQ4zlDaBdwWl2Gwsg9e68w&amp;client=ca-cnn-articleonly_js&amp;adurl=http://www.sonystyle.com/webapp/wcs/stores/servlet/CategoryDisplay%3FcatalogId%3D10551%26storeId%3D10151%26langId%3D-1%26categoryId%3D8198552921644751998%26XID%3DO:tv%2520by%2520apple:corp_sitv10_gglsrch:sitcont_appl_ad3"; 
+google_ad.visible_url = "www.SonyStyle.com/SonyInternetTV"; 
+google_ad.line1 = "Sony\x26#174; Internet TV"; 
+google_ad.line2 = "Watch Shows, Browse the Internet,"; 
+google_ad.line3 = "Or Both at Once Right From Your TV!"; 
+google_ad.regionname = ""; 
+google_ads[1] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 3; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=BEXF3zqy1TNa6FIGXnQfA35SnDL-piMQB77-KtRjAjbcBsPz1ARADGAMg_ITOCSgDOABQp92mXWDJ9pGI8KPsEqAB4eKC6AOyAQt3d3cuY25uLmNvbcgBAdoBOWh0dHA6Ly93d3cuY25uLmNvbS8yMDEwL1RFQ0gvbW9iaWxlLzEwLzEyL2lwaG9uZS40LmdsYXNzL8gCj9mFE6gDAegDrwjoA-QB9QMCBAAE&amp;num=3&amp;sig=AGiWqtybv6-jqJMKdw6dHjZh6CDNv9L3Gg&amp;client=ca-cnn-articleonly_js&amp;adurl=http://clickserve.us2.dartsearch.net/link/click%3Flid%3D43000000123993447%26ds_s_kwgid%3D58000000001540984%26ds_e_adid%3D6457103255%26ds_e_matchtype%3Dcontent%26ds_url_v%3D2"; 
+google_ad.visible_url = "www.CHASE.com/QuickDeposit"; 
+google_ad.line1 = "iPhone\x26#174; Check Deposit"; 
+google_ad.line2 = "Deposit Checks Anytime With Chase"; 
+google_ad.line3 = "App on Your iPhone\x26#174;. It\x26#39;s Fast!"; 
+google_ad.regionname = ""; 
+google_ads[2] = google_ad; 
+google_info.feedback_url = "http://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://www.cnn.com/2010/TECH/mobile/10/12/iphone.4.glass/%26hl%3Den%26client%3Dca-cnn-articleonly_js%26adU%3Dwww.BidSauce.com%26adT%3DiPhone%2B4%2BFor%2B%252426.34%253F%26adU%3Dwww.SonyStyle.com/SonyInternetTV%26adT%3DSony%25C2%25AE%2BInternet%2BTV%26adU%3Dwww.CHASE.com/QuickDeposit%26adT%3DiPhone%25C2%25AE%2BCheck%2BDeposit%26gl%3DUS%26hideleadgen%3D1\x26usg\x3dAFQjCNH6Qtyy1tKKQPExiITEtTBXeLahmg"; 
+if (window.google_ad_request_done) { 
+google_ad_request_done(google_ads); 
+} 
+if (window.google_radlink_request_done) { 
+google_radlink_request_done(google_radlinks); 
+} 
+}

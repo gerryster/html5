@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0172)http://ads.cnn.com/html.ng/site=cnn&cnn_pagetype=bst&cnn_position=607x95_adlinks&cnn_rollup=technology&page.allowcompete=no&params.styles=fs&tile=8639664796823&domId=768339 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script>
+        function cnnad_getTld (hostname)
+        {
+               var data = hostname.split(".");
+               if (data.length >= 2)
+               {
+                       return (data[data.length-2] + "." + data[data.length-1]);
+               }
+               return(null);
+        }
+ 
+        var cnnDocDomain = cnnad_getTld(location.hostname);
+        if(cnnDocDomain) {document.domain = cnnDocDomain;}
+
+	function cnnGetId(query) {
+		var keyValPairs = query.split('&');
+		if(!keyValPairs) {
+			keyValPairs = new Array();
+			keyValPairs[keyValPairs.length]=query;
+		}
+		for(var counter=0; counter < keyValPairs.length;counter++) {
+			var keyVal = keyValPairs[counter].split('=');
+			if(keyVal[0]=='domId') {
+				//alert("returning id: " + keyVal[1]);
+				return keyVal[1];
+			}
+		}
+	}
+			
+	function cnnSendData2() {
+		var docId = cnnGetId(decodeURIComponent(location.pathname.substring(9)));
+		var height = 110;
+		var width = 607;
+		var targetWindow = top;
+		try
+		{
+			if(parent.cnnad_showAd)
+			{
+				targetWindow = parent;
+			}
+		} catch(err) {} 
+		targetWindow.cnnad_showAd(docId);
+		if ((height > 0)&&(width > 0))
+		{
+			targetWindow.cnnad_setAdSize(docId,height,width);
+		}
+	}
+</script> 
+</head>
+
+<body style="background-color:transparent" onload="cnnSendData2()" marginwidth="0" marginheight="0">
+<!--FlightID: 258215-->
+<!-- BEGIN CREATIVE -->
+<style type="text/css" media="screen">
+        @import url(http://i.cdn.turner.com/cnn/.element/css/3.0/common.css);
+</style>
+<style>
+body { background-color:#fff;margin:0px; }
+#cnn585x116AdBox { margin:0px;width:605px; }
+.cnn_adspcggl607 { border:1px solid #e6e6e6;margin-bottom:20px; }
+
+.cnn_adspcggl607 .cnnTextAdTitle { font:bold 12px/15px arial;height:26px; }
+
+.cnn_adspcggl607 .cnn585AdHolder { height:108px;font:normal 11px/13px arial; }
+.cnn_adspcggl607 .cnnHtAdvertTitle { font-size:12px;font-weight:bold; }
+
+.cnn_adspcggl607 .cnnTextAd1,
+.cnn_adspcggl607 .cnnTextAd2,
+.cnn_adspcggl607 .cnnTextAd3 { float:left;display:inline;margin:7px 0 0 0;width:186px;overflow:hidden; }
+
+.cnn_adspcggl607 .cnnTextAd1 { margin:7px 12px 0 10px; }
+.cnn_adspcggl607 .cnnTextAd2 { margin:7px 12px 0 0px; }
+
+.cnn_adspcggl607 .cnnTextAd2 .cnnTextAdPad,
+.cnn_adspcggl607 .cnnTextAd3 .cnnTextAdPad { padding:26px 0 0 0; }
+
+.cnn_adspcggl607 .cnn585AdHCentered .cnnTextAdSingle { margin:7px 0 0 205px;width:200px;float:left;display:inline; }
+a, a:visited { text-decoration: none; }
+a:active, a:hover {text-decoration: underline}
+</style>
+<script type="text/javascript">
+        /* define all relevant Google ad variables */
+	google_ad_client = 'ca-cnn-articleonly_js';
+	google_ad_channel = 'tech';
+	google_ad_output = 'js';
+	google_max_num_ads = '3';
+	google_page_url = top.location;
+	google_ad_type = 'text';
+	google_language = 'en';
+	google_encoding = 'utf8';
+	google_safe = 'high';
+	google_adtest = 'off';
+
+	/* the google call back function */
+	function google_ad_request_done (google_ads)
+	{
+			if (google_ads.length === 0)
+			{
+					return;
+			}
+
+			// main container div for all the ads
+			var container = document.createElement('div');
+			container.className = 'cnn_adspcggl607';
+			container.id = 'cnn585x116AdBox';
+			document.body.appendChild(container);
+
+			var boxhead = document.createElement('div');
+			boxhead.className = 'cnnBoxHeader';
+			container.appendChild(boxhead);
+
+			var boxcurvediv = document.createElement('div');
+			boxhead.appendChild(boxcurvediv);
+			
+			var boxcontent = document.createElement('div');
+			boxcontent.className = 'cnnBoxContent';
+			container.appendChild(boxcontent);
+
+			var boxpad = document.createElement('div');
+			boxpad.className = 'cnnBoxPad';
+			boxcontent.appendChild(boxpad);
+
+			// the inner box 
+			var ads = document.createElement('div');
+			ads.className = 'cnn585AdHolder';
+			if(google_ads.length == 1) { ads.className += ' cnn585AdHCentered'; }
+			boxpad.appendChild(ads);
+
+			// now add in all the ads.
+			var ad;
+		 
+			for (var i = 0; i < google_ads.length; i++)
+			{
+				var adpad = document.createElement('div');
+				if(google_ads.length == 1){
+					adpad.className = 'cnnTextAdSingle';
+				}
+				else{
+					adpad.className = 'cnnTextAd' + (i + 1);
+				}
+				ads.appendChild(adpad);
+
+				var ad = document.createElement('div');
+				ad.className = 'cnnTextAdPad';
+				adpad.appendChild(ad);
+
+				if(i == 0) {
+				
+					var h = document.createElement('div');
+					h.className = 'cnnTextAdTitle';
+					h.innerHTML = '<b>Sponsored links</b>';
+					ad.appendChild(h);
+					
+				}
+				
+				adcontent = google_ad_create_elem(google_ads[i]);
+			
+				adcontent.className = '';
+				ad.appendChild(adcontent);	
+			}
+		  
+		 
+			
+			var boxfooter = document.createElement('div');
+			boxfooter.className = 'cnnBoxFooter';
+			container.appendChild(boxfooter);
+			
+			var boxcurvediv = document.createElement('div');
+			boxfooter.appendChild(boxcurvediv);
+			
+	}
+
+	/* helper function to create DOM elements for Google ads */
+	function google_ad_create_elem (google_ad)
+	{
+			// Google encodes their URL, so we can't use it as-is.
+			google_ad.url = google_ad.url.replace(/&amp;/g,"&");
+
+			// create the main div to hold the entire ad
+			var d = document.createElement('div');
+			d.className = 'cnnHtAdvertLnks';
+
+			// the heading (line1) of the ad
+			var h = document.createElement('span');
+			h.className = 'cnnHtAdvertTitle';
+			h.innerHTML = google_ad.line1;
+			h.onmouseover = function () { 
+									window.status = google_ad.visible_url;
+									this.style.cursor = document.all ? 'hand' : 'pointer';
+									this.style.textDecoration = 'underline';
+			};
+			h.onclick = function () { window.open(google_ad.url); };
+			h.onmouseout = function () { window.status = ''; this.style.cursor = 'auto'; this.style.textDecoration = 'none';};
+			d.appendChild(h);
+
+			// line break after the heading
+			var br1 = document.createElement('br');
+			d.appendChild(br1);
+
+			// insert the rest of the lines in the ad (line2 + line3)
+			var t = document.createElement('span');
+			t.innerHTML = google_ad.line2 + ' ' + google_ad.line3;
+			//t.onmouseover = function () { 
+									//window.status = google_ad.visible_url;
+									//this.style.cursor = document.all ? 'hand' : 'pointer';
+			//};
+			//t.onclick = function () { window.open(google_ad.url); };
+			//t.onmouseout = function () { window.status = ''; this.style.cursor = 'auto'; };
+			d.appendChild(t);
+
+			// add a line break after the main body of ad
+			var br2 = document.createElement('br');
+			d.appendChild(br2);
+
+			// link up the URL
+			var a = document.createElement('a');
+			var i = document.createTextNode(google_ad.visible_url);
+			a.target = "_blank";
+			a.href = google_ad.url;
+			a.onmouseover = function () { window.status = google_ad.visible_url; return true; };
+			a.appendChild(i);
+			d.appendChild(a);
+
+			return d;
+	}
+        
+     
+        
+</script>
+<script type="text/javascript" src="./iPhoneCNN.com_files/show_ads.js"></script><script src="./iPhoneCNN.com_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><script language="JavaScript1.1" src="./iPhoneCNN.com_files/ads"></script><div class="cnn_adspcggl607" id="cnn585x116AdBox"><div class="cnnBoxHeader"><div></div></div><div class="cnnBoxContent"><div class="cnnBoxPad"><div class="cnn585AdHolder"><div class="cnnTextAd1"><div class="cnnTextAdPad"><div class="cnnTextAdTitle"><b>Sponsored links</b></div><div class=""><span class="cnnHtAdvertTitle">iPhone 4 For $26.34?</span><br><span>New iPhones are selling as low as $26 today only at online auction.</span><br><a target="_blank" href="http://googleads.g.doubleclick.net/aclk?sa=l&ai=BA5BVzqy1TNa6FIGXnQfA35SnDIe4-YcCh4Sm7BfAjbcBoIYyEAEYASD8hM4JKAM4AFCM4vEQYMn2kYjwo-wSoAHBnfbtA7IBC3d3dy5jbm4uY29tyAEB2gE5aHR0cDovL3d3dy5jbm4uY29tLzIwMTAvVEVDSC9tb2JpbGUvMTAvMTIvaXBob25lLjQuZ2xhc3MvqAMB6AOvCOgD5AH1AwIEAAQ&num=1&sig=AGiWqtw2S8R4sKOkVVE1ig2Z0V8QAayOpA&client=ca-cnn-articleonly_js&adurl=http://vilari.com/tracking202/redirect/dl.php%3Ft202id%3D63478%26t202kw%3Dawcontent-iphone%25204%2520gb">www.BidSauce.com</a></div></div></div><div class="cnnTextAd2"><div class="cnnTextAdPad"><div class=""><span class="cnnHtAdvertTitle">Sony® Internet TV</span><br><span>Watch Shows, Browse the Internet, Or Both at Once Right From Your TV!</span><br><a target="_blank" href="http://googleads.g.doubleclick.net/aclk?sa=l&ai=B0CSbzqy1TNa6FIGXnQfA35SnDLvlrukB-_LzjxbAjbcBsJOYAhACGAIg_ITOCSgDOABQzt2ElgdgyfaRiPCj7BKyAQt3d3cuY25uLmNvbcgBAdoBOWh0dHA6Ly93d3cuY25uLmNvbS8yMDEwL1RFQ0gvbW9iaWxlLzEwLzEyL2lwaG9uZS40LmdsYXNzL8gC2-7vFagDAegDrwjoA-QB9QMCBAAE&num=2&sig=AGiWqtzqeJI2NQ4zlDaBdwWl2Gwsg9e68w&client=ca-cnn-articleonly_js&adurl=http://www.sonystyle.com/webapp/wcs/stores/servlet/CategoryDisplay%3FcatalogId%3D10551%26storeId%3D10151%26langId%3D-1%26categoryId%3D8198552921644751998%26XID%3DO:tv%2520by%2520apple:corp_sitv10_gglsrch:sitcont_appl_ad3">www.SonyStyle.com/SonyInternetTV</a></div></div></div><div class="cnnTextAd3"><div class="cnnTextAdPad"><div class=""><span class="cnnHtAdvertTitle">iPhone® Check Deposit</span><br><span>Deposit Checks Anytime With Chase App on Your iPhone®. It's Fast!</span><br><a target="_blank" href="http://googleads.g.doubleclick.net/aclk?sa=l&ai=BEXF3zqy1TNa6FIGXnQfA35SnDL-piMQB77-KtRjAjbcBsPz1ARADGAMg_ITOCSgDOABQp92mXWDJ9pGI8KPsEqAB4eKC6AOyAQt3d3cuY25uLmNvbcgBAdoBOWh0dHA6Ly93d3cuY25uLmNvbS8yMDEwL1RFQ0gvbW9iaWxlLzEwLzEyL2lwaG9uZS40LmdsYXNzL8gCj9mFE6gDAegDrwjoA-QB9QMCBAAE&num=3&sig=AGiWqtybv6-jqJMKdw6dHjZh6CDNv9L3Gg&client=ca-cnn-articleonly_js&adurl=http://clickserve.us2.dartsearch.net/link/click%3Flid%3D43000000123993447%26ds_s_kwgid%3D58000000001540984%26ds_e_adid%3D6457103255%26ds_e_matchtype%3Dcontent%26ds_url_v%3D2">www.CHASE.com/QuickDeposit</a></div></div></div></div></div></div><div class="cnnBoxFooter"><div></div></div></div>
+<!-- END CREATIVE -->
+<img src="./iPhoneCNN.com_files/Type=count&ClientType=2&ASeg=&AMod=&AOpt=0&AdID=435468&FlightID=258215&TargetID=76011&SiteID=1588&EntityDefResetFlag=0&C=0&Segments=934,2247,2743,3285,4008,9496,9779,9781,9784,9" width="1" height="1" border="0">
+
+</body></html>

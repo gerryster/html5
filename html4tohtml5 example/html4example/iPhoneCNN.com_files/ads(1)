@@ -1,0 +1,51 @@
+{ 
+ 
+var google_ads = new Array(); 
+var google_ad; 
+var google_radlinks = new Array(); 
+var google_radlink; 
+var google_info = new Object(); 
+google_ad = new Object(); 
+google_ad.n = 1; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=BR04Rzqy1TKOiGoeXnQeH2KW5DIe4-YcCh4Sm7BfAjbcBoJUtEAEYASD8hM4JKAM4AFC8g-nmBmDJ9pGI8KPsEqABwZ327QOyAQt3d3cuY25uLmNvbcgBAdoBOWh0dHA6Ly93d3cuY25uLmNvbS8yMDEwL1RFQ0gvbW9iaWxlLzEwLzEyL2lwaG9uZS40LmdsYXNzL6gDAegDrwjoA-QB9QMCBAAE&amp;num=1&amp;sig=AGiWqtxrruJcK-GniuPKqWsHxUOri6BMfw&amp;client=ca-cnn-articleonly_js&amp;adurl=http://vilari.com/tracking202/redirect/dl.php%3Ft202id%3D63478%26t202kw%3Dawcontent-iphone%2520deals"; 
+google_ad.visible_url = "www.BidSauce.com"; 
+google_ad.line1 = "iPhone 4 For $26.34?"; 
+google_ad.line2 = "New iPhones are selling as low as"; 
+google_ad.line3 = "$26 today only at online auction."; 
+google_ad.regionname = ""; 
+google_ads[0] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 2; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=B8yuczqy1TKOiGoeXnQeH2KW5DLvlrukBs6j0jxbAjbcBgNaHAhACGAIg_ITOCSgDOABQzdC7hvv_____AWDJ9pGI8KPsErIBC3d3dy5jbm4uY29tyAEB2gE5aHR0cDovL3d3dy5jbm4uY29tLzIwMTAvVEVDSC9tb2JpbGUvMTAvMTIvaXBob25lLjQuZ2xhc3MvyALb7u8VqAMB6AOvCOgD5AH1AwIEAAQ&amp;num=2&amp;sig=AGiWqtz1_m1ANMAazEadvoB0zxFKHUwZjA&amp;client=ca-cnn-articleonly_js&amp;adurl=http://www.sonystyle.com/webapp/wcs/stores/servlet/CategoryDisplay%3FcatalogId%3D10551%26storeId%3D10151%26langId%3D-1%26categoryId%3D8198552921644751998%26XID%3DO:apple%2520tv:corp_sitv10_gglsrch:sitcont_appl_ad2"; 
+google_ad.visible_url = "www.SonyStyle.com/SonyInternetTV"; 
+google_ad.line1 = "Sony\x26#174; Internet TV"; 
+google_ad.line2 = "Search the Web and TV Listings"; 
+google_ad.line3 = "Directly From Your TV. Preorder Now"; 
+google_ad.regionname = ""; 
+google_ads[1] = google_ad; 
+google_ad = new Object(); 
+google_ad.n = 3; 
+google_ad.type = "text"; 
+google_ad.bidtype = "CPC"; 
+google_ad.targeting_type = "contextual"; 
+google_ad.url = "http://googleads.g.doubleclick.net/aclk?sa=l&amp;ai=BtY-yzqy1TKOiGoeXnQeH2KW5DI_hqO4B17fWwRXAjbcBoOmOARADGAMg_ITOCSgDOABQt-XZ-P7_____AWDJ9pGI8KPsEqABmeSS7QOyAQt3d3cuY25uLmNvbcgBAdoBOWh0dHA6Ly93d3cuY25uLmNvbS8yMDEwL1RFQ0gvbW9iaWxlLzEwLzEyL2lwaG9uZS40LmdsYXNzL8gCt8-CFagDAegDrwjoA-QB9QMCBAAE&amp;num=3&amp;sig=AGiWqtzvlGzpEeZxY4bVxDWKQx4x2EEF4g&amp;client=ca-cnn-articleonly_js&amp;adurl=http://18.xg4ken.com/media/redir.php%3Fprof%3D113%26camp%3D15921%26affcode%3D924074%26cid%3D5665676447%26networkType%3Dcontent%26cm_ven%3DGoogle%26cm_cat%3DContent_Belief_KW%26cm_pla%3Dreplacement%2520phone%2520at%2526t%26cm_ite%3D924074%26url%5B%5D%3Dhttp%253A%252F%252Fwww.uscellular.com"; 
+google_ad.visible_url = "www.uscellular.com/Project"; 
+google_ad.line1 = "Phone Replacement"; 
+google_ad.line2 = "Find U.S. Cellular\x26#174; Plans with"; 
+google_ad.line3 = "Phone Replacement Options."; 
+google_ad.regionname = ""; 
+google_ads[2] = google_ad; 
+google_info.feedback_url = "http://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://www.cnn.com/2010/TECH/mobile/10/12/iphone.4.glass/%26hl%3Den%26client%3Dca-cnn-articleonly_js%26adU%3Dwww.BidSauce.com%26adT%3DiPhone%2B4%2BFor%2B%252426.34%253F%26adU%3Dwww.SonyStyle.com/SonyInternetTV%26adT%3DSony%25C2%25AE%2BInternet%2BTV%26adU%3Dwww.uscellular.com/Project%26adT%3DPhone%2BReplacement%26gl%3DUS%26hideleadgen%3D1\x26usg\x3dAFQjCNHaDXUTCmZy_FjGcJ5g-vDQUGDULg"; 
+if (window.google_ad_request_done) { 
+google_ad_request_done(google_ads); 
+} 
+if (window.google_radlink_request_done) { 
+google_radlink_request_done(google_radlinks); 
+} 
+}

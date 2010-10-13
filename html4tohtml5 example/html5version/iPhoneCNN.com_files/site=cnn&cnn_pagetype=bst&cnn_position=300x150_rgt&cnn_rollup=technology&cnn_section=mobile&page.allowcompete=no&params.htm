@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0188)http://ads.cnn.com/html.ng/site=cnn&cnn_pagetype=bst&cnn_position=300x150_rgt&cnn_rollup=technology&cnn_section=mobile&page.allowcompete=no&params.styles=fs&tile=8639664796821&domId=247746 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script>
+        function cnnad_getTld (hostname)
+        {
+               var data = hostname.split(".");
+               if (data.length >= 2)
+               {
+                       return (data[data.length-2] + "." + data[data.length-1]);
+               }
+               return(null);
+        }
+ 
+        var cnnDocDomain = cnnad_getTld(location.hostname);
+        if(cnnDocDomain) {document.domain = cnnDocDomain;}
+
+	function cnnGetId(query) {
+		var keyValPairs = query.split('&');
+		if(!keyValPairs) {
+			keyValPairs = new Array();
+			keyValPairs[keyValPairs.length]=query;
+		}
+		for(var counter=0; counter < keyValPairs.length;counter++) {
+			var keyVal = keyValPairs[counter].split('=');
+			if(keyVal[0]=='domId') {
+				//alert("returning id: " + keyVal[1]);
+				return keyVal[1];
+			}
+		}
+	}
+			
+	function cnnSendData2() {
+		var docId = cnnGetId(decodeURIComponent(location.pathname.substring(9)));
+		var height = 100;
+		var width = 300;
+		var targetWindow = top;
+		try
+		{
+			if(parent.cnnad_showAd)
+			{
+				targetWindow = parent;
+			}
+		} catch(err) {} 
+		targetWindow.cnnad_showAd(docId);
+		if ((height > 0)&&(width > 0))
+		{
+			targetWindow.cnnad_setAdSize(docId,height,width);
+		}
+	}
+</script> 
+</head>
+
+<body style="background-color:transparent" onload="cnnSendData2()" marginwidth="0" marginheight="0">
+<!--FlightID: 310604-->
+<iframe src="./iPhoneCNN.com_files/categoryhtml.htm" width="300" height="100" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+<div style="position:absolute;visibility:hidden;"><img src="./iPhoneCNN.com_files/Type=count&ClientType=2&ASeg=&AMod=&AOpt=0&AdID=422307&FlightID=310604&TargetID=96030&SiteID=1588&EntityDefResetFlag=0&C=0&Segments=934,2247,2743,3285,4008,9496,9779,9781,9784,9" width="1" height="1" border="0"></div>
+
+</body></html>
