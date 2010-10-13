@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Semantic Tags Test</title>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+        <script>
+          var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+            "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+            "progress,section,time,video").split(',');
+          for (var i = 0; i < e.length; i++) {
+            document.createElement(e[i]);
+          }
+        </script>
+        <![endif]-->
+        <style type="text/css">
+              header { display: block; border: 1px solid red }
+              h1,h2,h3 { color: blue }
+        </style>
+        <header>
+            <h1>Title</h1>
+            <h2>Sub Title</h2>
+        </header>
+
+        <p>
+        <em>Note that in IE &lt; 9 the header tag does not get any styling unless the tag is created first with the IE enabling script.  Also, IE &lt; 9 requires that the styling for header be set to block.  IE &lt; 9 does render styles for tags within unkown tags.</em>
+
+        <h1>Article 1 heading</h1>
+        <h2>Article 1 sub heading</h2>
+        Article content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+        <h1>Article 2 heading</h1>
+        <h2>Article 2 sub heading</h2>
+        Article 2 content: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </body>
+</html>
+
