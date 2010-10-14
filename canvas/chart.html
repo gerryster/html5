@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>An example canvas chart</title>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+        <script>
+          var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+            "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+            "progress,section,time,video").split(',');
+          for (var i = 0; i < e.length; i++) {
+            document.createElement(e[i]);
+          }
+        </script>
+        <![endif]-->
+        <header>
+            <h1>US Debt as a Percentage of GDP</h1>
+        </header>
+        <script>
+            var canvas = document.getElementById("graph");
+            var context = canvas.getContext("2d");
+
+            for (var x = 0.5; x < 500; x += 10) {
+                context.moveTo(x, 0);
+                context.lineTo(x, 375);
+            }
+
+            context.strokeStyle = "#eee";
+            context.stroke();
+        </script>
+        <canvas height="340" width="340" style="border:1px dotted" id="graph"></canvas>
+
+        <p>
+        Data Source: <a href="http://www.usgovernmentspending.com/federal_debt_chart.html">usgovernmentspending.com</a>
+        </body>
+</html>
+
