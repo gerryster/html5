@@ -451,6 +451,10 @@
         display: inline-block;
         width: 50px;
       }
+
+      .browser-support {
+          text-align : center
+      }
     </style> 
     
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
@@ -479,9 +483,8 @@
         </div> 
                 
         <div class="slide myslide"> 
-          <header>Goals</header> 
+          <header>Goals of this Presentation</header> 
           <section>
-          <span style="padding-top: 2px">
           <ul>
             <li>Get excited: "Peak of Inflated Expectations"</li>
             <li>Become realistic: "Trough of Disillusionment"</li>
@@ -494,6 +497,13 @@
           </section>
         </div> 
         
+        <div class="slide myslide intro"> 
+          <header>The Goal of HTML 5 (according to me)</header> 
+          <section class="middle">
+            <h2>To provide a standard way to for web applications to do anything that native applications can do <em>without browser plugins</em>.</h2>
+          </section>
+        </div> 
+ 
         <div class="slide myslide"> 
           <header>Disclaimer</header> 
           <section>
@@ -717,7 +727,7 @@ textarea.value = window.<b>localStorage</b>['value'];
           <header><span class="js">JS APIs</span> <h1>Web Storage: More Details</h1></header> 
           <section>
           <h2>Browser Support</h2> 
-          <table>
+          <table class="browser-support">
             <tr>
               <th>IE</th>
               <th>Firefox</th>
@@ -745,11 +755,10 @@ textarea.value = window.<b>localStorage</b>['value'];
             <li>Flash based local storage</li>
             <li>Google Gears</li>
           </ul>
-          <a href="" target="blank">dojox.storage</a> can be used to access Flash storage.
+          <a href="http://api.dojotoolkit.org/jsdoc/HEAD/dojox.storage.manager" target="blank">dojox.storage</a> from the Dojo Javascript toolkit can be used to access Flash storage.
           </section>
         </div>
  
-
         <div class="slide"> 
           <style> 
             .record-list li:nth-child(odd) { background-color: #eee; }
@@ -854,6 +863,44 @@ db.<b>transaction</b>(function(tx) {
         </section> 
       </div> 
  
+      <div class="slide myslide"> 
+          <header><span class="js">JS APIs</span> <h1>Web SQL Database: Details</h1></header> 
+          <section>
+          <h2>Browser Support</h2> 
+          <table class="browser-support">
+            <tr>
+              <th>IE</th>
+              <th>Firefox</th>
+              <th>Safari</th>
+              <th>Chrome</th>
+              <th>Opera</th>
+              <th>iPhone</th>
+              <th>Android</th>
+            </tr>
+            <tr>
+              <td>·</td>
+              <td>·</td>
+              <td>4.0+</td>
+              <td>4.0+</td>
+              <td>10.5+</td>
+              <td>3.0+</td>
+              <td>2.0+</td>
+            </tr>
+          </table>
+          <a href="http://www.diveintohtml5.org/storage.html#future" target="blank">Source</a>
+
+          <h2>Controversy</h2>
+          <ul>
+            <li>No standards support because of only one reference implementation (Sqlite)</li>
+            <li>Microsoft and the Mozilla Foundation are more interested in <a href="http://dvcs.w3.org/hg/IndexedDB/raw-file/tip/Overview.html" target="blank">IndexDB</a> which is a document oriented database.</li>
+          </ul>
+
+          <h2>Fall-back Option</h2>
+          <ul>
+            <li>Google Gears</li>
+          </ul>
+          </section>
+        </div>
  
  
         <div class="slide"> 
@@ -884,8 +931,69 @@ CACHE:
           </section> 
         </div> 
  
- 
- 
+        <div class="slide myslide"> 
+          <header><span class="js">JS APIs</span> <h1>Application Cache: Details</h1></header> 
+          <section>
+          <h2>Browser Support</h2> 
+          <table class="browser-support">
+            <tr>
+              <th>IE</th>
+              <th>Firefox</th>
+              <th>Safari</th>
+              <th>Chrome</th>
+              <th>Opera</th>
+              <th>iPhone</th>
+              <th>Android</th>
+            </tr>
+            <tr>
+              <td>·</td>
+              <td>3.5+</td>
+              <td>Yes</td>
+              <td>Yes</td>
+              <td>10.6+</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+          </table>
+          <a href="http://www.diveintohtml5.org/offline.html#divingin" target="blank">Source 1</a>
+          <a href="http://en.wikipedia.org/wiki/Comparison_of_layout_engines_(HTML5)#Related_specifications" target="blank">Source 2</a>
+
+          <h2>Detecting Browser Support</h2>
+            <p><a href="http://www.modernizr.com/docs/#applicationcache" target="blank">Modernizr</a> example:
+            <pre>
+if (Modernizr.applicationcache){
+  // We have offline web app support! Continue operation,
+  // indicating to the user that the app will sync up once they get back online
+} else {
+  // No offline support, show errors if the user goes offline
+}  
+            </pre>
+
+          <h2>Fall-back Option</h2>
+          <ul>
+            <li>Write a native application (joking)</li>
+          </ul>
+          </section>
+        </div>
+
+        <div class="slide myslide"> 
+          <header><h1>An Important Tangent: Detecting Features</h1></header> 
+          <section>
+          <p>The general strategy is to create a new HTML 5 tag with Javascript and make assertions about that newly created tag.  There are different rules for different features.</p>
+          <h2>The easy way to detect new features</h2>
+            <p>Use the <a href="http://www.modernizr.com/" target="blank">Modernizr</a> library.
+            <pre>
+if (Modernizr.<em>featurename</em>){
+  // Yay!  I can use this fancy new feature!
+} else {
+  // Sigh, time to fall back to something else.
+}  
+            </pre>
+
+            <h2>Why not just sniff the user agent string?</h2>
+            <p>Because that is error prone and fragile and there are more reliable client side ways to detect features.
+          </section>
+        </div>
         <div class="slide force-render"> 
           <style> 
             #wmap {
