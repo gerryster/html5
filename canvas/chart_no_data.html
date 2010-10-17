@@ -17,8 +17,7 @@
         <header>
             <h1>US Debt as a Percentage of GDP</h1>
         </header>
-        <!--<canvas height="360" width="690" style="border:1px dotted" id="graph"></canvas>-->
-        <canvas height="360" width="690" id="graph"></canvas>
+        <canvas height="360" width="690" style="border:1px dotted" id="graph"></canvas>
         <script>
             var canvas = document.getElementById("graph");
             var context = canvas.getContext("2d");
@@ -203,11 +202,8 @@
             }
 
             function drawData() {
-                for(var i = 0; i < graphData.length; i++) {
-                    var xOffset = graphStartX + (i * (graphWidthX / numberOfYears));
-                    var yPosition = graphEndY - (graphData[i][1] * 2);
-                    context.fillRect(xOffset, yPosition, 3, 3);
-                }
+                // for a list of canvas methods see:
+                // http://www.diveintohtml5.org/peeks-pokes-and-pointers.html
             }
 
             drawAxies();

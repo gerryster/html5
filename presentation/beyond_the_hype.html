@@ -1514,6 +1514,16 @@ footer,header,hgroup,menu,nav,section {
 </pre> 
           </section> 
         </div> 
+
+        <div class="slide myslide"> 
+          <header><span class="html">HTML</span> <h1>Details</h1></header> 
+          <section> 
+            <h2>Using new link relations, microdata and ARIA attributes</h2>
+            <p>Use them.  Old browswers should not break as these mostly use new attributes.
+            <p>Help those with special needs.
+          </section> 
+        </div> 
+ 
  
         <div class="slide"> 
           <header><span class="html">HTML</span> <h1>New form field types</h1></header> 
@@ -1562,7 +1572,27 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
  
           </section> 
         </div> 
- 
+
+        <div class="slide myslide"> 
+          <header><span class="html">HTML</span> <h1>New form field types: Details</h1></header> 
+          <section> 
+            <h2>Browser support</h2>
+            <p>Unkown form elements downgrade to plain text input.</p>
+            <p>Modernizr can detect supported tags.</p>
+          <table class="browser-support">
+            <tr>
+                <th></th><th>IE</th> <th>Firefox</th> <th>Safari</th> <th>Chrome</th> <th>Opera</th> <th>iPhone</th> <th>Android</th>
+            </tr>
+            <tr> <td>Placeholder text</td> <td>·</td> <td>3.7+</td> <td>4.0+</td> <td>4.0+</td> <td>·</td> <td>4.0+</td> <td>·</td> </tr>
+            <tr> <td>Autofocus</td> <td>·</td> <td>·</td> <td>4.0+</td> <td>3.0+</td> <td>10.0+</td> <td>·</td> <td>·</td> </tr>
+            <tr> <td>Date Pickers</td> <td>·</td> <td>·</td> <td>·</td> <td>·</td> <td>9.0+</td> <td>·</td> <td>·</td> </tr>
+            <tr> <td>Color Pickers</td> <td>·</td> <td>·</td> <td>·</td> <td>·</td> <td>·</td> <td>·</td> <td>·</td> </tr>
+            <tr> <td>Form Validation</td> <td>·</td> <td>4.0+</td> <td>5.0+</td> <td>6.0+</td> <td>9.0+</td> <td>·</td> <td>·</td> </tr>
+            <tr> <td>Required Fields</td> <td>·</td> <td>4.0+</td> <td>5.0+</td> <td>6.0+</td> <td>9.0+</td> <td>·</td> <td>·</td> </tr>
+          </table>
+          <a href="http://www.diveintohtml5.org/forms.html" target="blank">Source</a>
+          </section> 
+        </div> 
  
         <div class="slide"> 
           <style> 
@@ -1721,7 +1751,51 @@ document.getElementById("video").<b>play</b>();
             </script> 
           </section> 
         </div> 
- 
+  
+        <div class="slide myslide"> 
+          <header><span class="html">HTML</span> <h1>Canvas: Details</h1></header> 
+          <section>
+          <h2>What is it?</h2> 
+          <p>Pixel level 2D drawing surface.
+          <h2>Browser Support</h2> 
+          <table class="browser-support">
+            <thead>
+              <tr> <th>IE<sup>*</sup></th> <th>Firefox</th> <th>Safari</th> <th>Chrome</th> <th>Opera</th> <th>iPhone</th> <th>Android</th> </tr>
+            </thead>
+            <tbody>
+              <tr><td>7.0+<td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
+            </tbody>
+          </table>
+          <sup>*</sup> IE canvas is not native until version 9.  Versions 7 and 8 are emulated via the <a href="http://code.google.com/p/explorercanvas/" target="blank">explorercanvas</a> JavaScript library.
+
+          <br>
+          <a href="http://www.diveintohtml5.org/canvas.html#divingin" target="blank">Source</a>
+
+          <h2>Fall-back Options</h2>
+          <ul>
+            <li>Flash</li>
+            <li>Render dynamic images on the server side</li>
+          </ul>
+          </section>
+        </div>
+
+        <div class="slide myslide"> 
+          <header><span class="html">HTML</span> <h1>Canvas: How to use it</h1></header> 
+          <section>
+          <h2>Layout</h2> 
+          <p>Math Geeks: Quadrant IV of the Cartesian coordinate system without the negatives.
+          <br>
+          <a href="http://www.diveintohtml5.org/canvas.html#divingin" target="blank">Source</a>
+          <p><a href="http://www.diveintohtml5.org/canvas.html#coordinates" target="blank">Click here</a> to see a diagram of the canvas layout</p>
+        </div>
+
+        <div class="slide myslide "> 
+          <header>Thank You!</header>
+          <section class="middle intro">
+          <h2>This slide show and examples are available in my git hub account:<br>
+            <a href="http://github.com/gerryster/html5">http://github.com/gerryster/html5</a></h2>
+        </div>
+
       </div> <!-- slides --> 
  
     </div> <!-- presentation --> 
