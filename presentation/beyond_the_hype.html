@@ -1396,6 +1396,58 @@ socket.<b>onclose</b> = function(event) { alert(“closed”); }
             </pre> 
           </section> 
         </div> 
+
+        <div class="slide myslide"> 
+          <header><span class="html">HTML</span> <h1>New semantic tags: Details</h1></header> 
+          <section> 
+            <h2>Using in older browsers</h2>
+            <p>In general this downgrades well with a little set up.
+            <h3>How browsers handle unknown tags:</h3>
+            <p>Styles are applied in-line (as in CSS <code>&quot;display: inline&quot;</code>).
+            <p>That works fine except for elements which should get a rectangular box (as in CSS <code>&quot;display: block&quot;</code>).
+            <h3>But some new elements are block-level!</h3>
+            <p>For older browsers this CSS definition makes those elements block-level:
+            <pre>
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+      display:block;
+}
+            </pre>
+            <a href="http://www.diveintohtml5.org/semantics.html#new-elements" target="blank">Source</a>
+            <p>Using Modernizr automatically sets this up.
+          </section> 
+        </div> 
+ 
+        <div class="slide myslide"> 
+          <header><span class="html">HTML</span> <h1>New semantic tags: More Details</h1></header> 
+          <section> 
+            <h2>IE 8 and below do not apply styles to unknown tags</h2>
+            <p>Workaround:
+            <pre>
+&lt;head&gt;
+  &lt;!--[if lt IE 9]&gt;
+  &lt;script&gt;
+    var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+      "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+      "progress,section,time,video").split(',');
+    for (var i = 0; i &lt; e.length; i++) {
+      document.createElement(e[i]);
+    }
+  &lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+            </pre>
+            <p>Modernizr also does this for you!</p>
+            <a href="http://www.diveintohtml5.org/semantics.html#new-elements" target="blank">Source</a>
+          </section> 
+        </div> 
+
+        <div class="slide myslide"> 
+          <header>Randori 1</header>
+          <section class="middle intro"> 
+            <h2>Problem to attack: convert the header and navigation of an HTML4 site into HTML5</h2>
+          </section> 
+        </div> 
  
         <div class="slide"> 
           <header><span class="html">HTML</span> <h1>New link relations</h1></header> 
