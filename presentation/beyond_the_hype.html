@@ -994,181 +994,6 @@ if (Modernizr.<em>featurename</em>){
             <p>Because that is error prone and fragile and there are more reliable client side ways to detect features.
           </section>
         </div>
-        <div class="slide force-render"> 
-          <style> 
-            #wmap {
-              height: 200px;
-            }
-            #w-loading {
-              visibility: hidden;
-              display: inline;
-              background-color: red;
-              color: white;
-              padding: 5px;
-              border-radius: 5px;
-            }
-          </style> 
-          <header><span class="js">JS APIs</span> <h1>Web Workers</h1></header> 
-          <section> 
-<pre>main.js:
-  var worker = new <b>Worker</b>('extra_work.js');
-  worker.<b>onmessage</b> = function(event) { alert(event.data); };
- 
-extra_work.js:
-  self.<b>onmessage</b> = function(event) {
-    // Do some work.
-    self.<b>postMessage</b>(some_data);
-  }
-</pre> 
-        <script src="src/webworkers/points.js"></script> 
-        <script src="src/webworkers/annealing.js"></script> 
- 
-        <div id="w-wrapper"> 
-          <div id="wmap" class="gmap"></div> 
-          <button id="find-route-y">Find Route with Workers</button> 
-          <button id="find-route-n">Find Route without Workers</button> 
-          <p id="w-loading">Loading Route...</p> 
-          <p>Try dragging the map while the complex route is being calculated (you will only be able to do that with Workers!)</p> 
-        </div> 
-        <script> 
-        var markersArray = [];
-        var workermap = null;
-        var useThreads = false;
-        window.addEventListener('load', function() {
-          var myOptions = {
-            zoom: 3,
-            center: new google.maps.LatLng(13, 13),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          }
-          workermap = new google.maps.Map(document.getElementById("wmap"), myOptions);
-          workermap.setCenter(new google.maps.LatLng(13, 13));
-          drawPoints();
- 
-          document.querySelector('#w-wrapper').addEventListener('click', function(event) {
-            if (event.target.id == 'find-route-y') {
-              useThreads = true;
-              document.getElementById('w-loading').style.visibility = 'visible'
-              test();
-            }
-            else if (event.target.id == 'find-route-n'){
-              useThreads = false;
-              document.getElementById('w-loading').style.visibility = 'visible'
-              // this setTimout is so that we see the 'loading' label
-              setTimeout(function() { test(); }, 10);
-            }
-          }, false);
-        }, false);
- 
-        function drawPath(path) {
-          var firstPoint = true;
-          var l = p1.length;
-          var scaleFactor = 5;
-          for (var i = 0; i < l - 1; i++) {
-            var points = [
-              new google.maps.LatLng(p1[i].x / scaleFactor,
-                                     p1[i].y / scaleFactor),
-              new google.maps.LatLng(p1[i + 1].x / scaleFactor,
-                                     p1[i + 1].y / scaleFactor)
-            ];
-            var polyline = new google.maps.Polyline(
-                {path: points, strokeColor: '#ff0000', strokeWeight: 1 });
-            markersArray.push(polyline);
-            polyline.setMap(workermap);
-          }
-        }
- 
-        function drawPoints() {
-          var blueIcon = new google.maps.MarkerImage('src/webworkers/point.png',
-                // size
-                new google.maps.Size(3, 3),
-                // origin
-                new google.maps.Point(0, 0),
-                // anchor
-                new google.maps.Point(0, 0));
-          for (var i = 0; i < p1.length; i++) {
-            // Render in Gmap instead of canvas
-            var point = new google.maps.LatLng(p1[i].x / 5, p1[i].y / 5);
-            var marker = new google.maps.Marker({position: point,
-                                                 icon: blueIcon});
-            markersArray.push(marker);
-            marker.setMap(workermap);
-          }
-        }
- 
-        function deleteOverlays() {
-          if (markersArray) {
-            for (i in markersArray) {
-              markersArray[i].setMap(null);
-            }
-            markersArray.length = 0;
-          }
-        }
- 
-        function test() {
-          var name = "Test 1";
-          var self = this;
-          deleteOverlays();
-          drawPoints();
-          setTimeout(function() {
-              var opts = {
-                points: p1,
-                t0: 1,
-                g: 0.99,
-                stepsPerT: 10
-              }
-              var callback = {
-                name: name,
-                newMin: function(p) {
-                },
-                draw: function(p) {
-                  document.getElementById('w-loading').style.visibility = 'hidden';
-                  drawPath(p);
-                }
-              };
-              var a;
-              if (useThreads) {
-                var worker = new Worker('src/webworkers/Worker.js')
-                worker.onmessage = function(event) {
-                  var returnedData = JSON.parse(event.data);
-                  var msg = returnedData[0];
-                  var p = returnedData[1];
-                  callback[msg](p);
-                };
-                worker.onerror = function(event) {
-                  console.log(event);
-                };
-                worker.postMessage(JSON.stringify({
-                        opts: opts,
-                        width: 200,
-                        height: 200
-                      }));
-              }
-              else {
-                var annealing = new Annealing();
-                  var callback2 = {
-                    onNewMin: function(p) {
-                      // postMessage('newmin')
-                    },
-                    onDone: function(p) {
-                      document.getElementById('w-loading').style.visibility = 'hidden';
-                      drawPath(p);
-                    }
-                  };
-                  annealing.init(opts, opts.width,
-                                 opts.height, callback2)
-                  annealing.go();
-              }
-                // a = new Annealing();
-              // a.init(opts, 200, 200, listener);
-              // a.go();
- 
-          }, 10);
-        }
-        
-        </script> 
-        </section> 
-        </div> 
- 
  
         <div class="slide"> 
           <style> 
@@ -1327,7 +1152,31 @@ socket.<b>onclose</b> = function(event) { alert(“closed”); }
           </script> 
           </section> 
         </div> 
+      
+        <div class="slide myslide"> 
+          <header><span class="js">JS APIs</span> <h1>Geolocation: Details</h1></header> 
+          <section> 
+            <h2>Browser Support</h2> 
+            <table class="browser-support">
+              <thead>
+                <tr> <th>IE<sup>*</sup></th> <th>Firefox</th> <th>Safari</th> <th>Chrome</th> <th>Opera</th> <th>iPhone</th> <th>Android</th> </tr>
+              </thead>
+              <tbody>
+                <tr><td>·<td>3.5+<td>5.0+<td>5.0+<td>10.6+<td>3.0+<td>2.0+
+              </tbody>
+            </table>
+            <a href="http://diveintohtml5.org/geolocation.html#w3c" target="blank">Source</a>
+            <h2>Pre-HTML5 Options</h2>
+            <ul>
+              <li>Google Gears
+              <li>Various other mobile device API's
+            </ul>
+            <h2>Smoothing Over the Differences</h2>
+            <p>The Open Source geo.js library provides one interface to many location API's.
+          </section> 
+        </div> 
  
+
 
 <div class="slide"> 
           <section class="middle"> 
@@ -1711,6 +1560,45 @@ document.getElementById("video").<b>play</b>();
           </script> 
         </div> 
  
+        <div class="slide myslide"> 
+          <header><span class="html">HTML</span> <h1>Audio + Video: Details</h1></header> 
+          <section> 
+            <h2>Browser Support for the &lt;video&gt; Tag</h2> 
+            <table class="browser-support">
+              <thead>
+                <tr> <th>IE</th> <th>Firefox</th> <th>Safari</th> <th>Chrome</th> <th>Opera</th> <th>iPhone</th> <th>Android</th> </tr>
+              </thead>
+              <tbody>
+                <tr><td>9.0+ <td>3.5+ <td>3.0+ <td>3.0+<td> 10.5+ <td>1.0+ <td>2.0+
+              </tbody>
+            </table>
+            <a href="http://diveintohtml5.org/video.html" target="blank">Source</a>
+            <p>However, it is not that simple!
+            <h2>There is a format war and here are the factions (video + audio + container format)</h2>
+            <ul>
+              <li>H.264+AAC+MP4 - Licenced by the <a href="http://www.mpegla.com/main/default.aspx">MPEG LA group</a>.  Apple uses this format a lot.
+              <li>Theora+Vorbis+Ogg - Royalty-free and used by major Linux distributions and Firefox 3.5.
+              <li>VP8+Vorbis+WebM - Created by the company On2 which was recently purchased by Google.  Google licenced all existing patents as royalty-free.
+            </ul>
+          </section> 
+        </div> 
+ 
+        <div class="slide myslide"> 
+          <header><span class="html">HTML</span> <h1>Audio + Video: More Details</h1></header> 
+          <section> 
+            <h2>More bad news</h2>
+            <p><em>There is no one format which works in all major browsers.</em>
+            <p>Corollary: videos will need to be encoded in all three formats.
+            <p>On the plus side, open source encoders are available.
+
+            <h2>Dealing with Internet Explorer</h2>
+            <p>Most IE users have Adobe Flash installed.
+            <p>Flash can play H.264 video.
+            <p><a href="http://flowplayer.org/">Flowplayer</a> is a GPL'd flash based video player.
+            <p>Built in fall-back: A nicety of the HTML5 video spec is that, for fall-back purposes, other tags can be nested inside the <code>&lt;video&gt;</code> tag.  Browsers which support the video tag will ignore these nested fall-back tags.
+          </section> 
+        </div> 
+ 
         <div class="slide"> 
           <header><span class="html">HTML</span> <h1>Canvas</h1></header> 
           <section> 
@@ -1796,11 +1684,19 @@ document.getElementById("video").<b>play</b>();
           </section> 
         </div> 
  
+        <div class="slide myslide"> 
+          <header>References/Learn More</header>
+          <section>
+            <p>HTML5 support in various layout engines <a href="http://en.wikipedia.org/wiki/Comparison_of_layout_engines_(HTML5)" target="blank">http://en.wikipedia.org/wiki/Comparison_of_layout_engines_(HTML5)</a>
+            <p><a href="http://diveintohtml5.org/">http://diveintohtml5.org/</a>.  Dive Into HTML5 is an excellent book by Mark Pilgrim which is referenced heavily in this presentation.
+            <p><a href="http://slides.html5rocks.com/">http://slides.html5rocks.com/</a>.  Slides this presentation was based off of.
+          </section> 
+        </div> 
 
         <div class="slide myslide "> 
           <header>Thank You!</header>
           <section class="middle intro">
-          <h2>This slide show and examples are available in my git hub account:<br>
+          <h2>This slide show and examples are available in my github account:<br>
             <a href="http://github.com/gerryster/html5">http://github.com/gerryster/html5</a></h2>
         </div>
 
