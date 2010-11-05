@@ -512,57 +512,7 @@
         </div> 
 
         <div class="slide myslide"> 
-          <style> 
-            .intro h1, .intro h2 {
-              color: black;
-            }
-            .intro h1 {
-              letter-spacing: -2px;
-              font-size: 96px;
-            }
-            .intro h2 {
-              margin-top: -5px;
-              font-size: 40px;
-              letter-spacing: -1px;
-            }
-          </style> 
-          <section class="middle intro">
-            <hgroup>
-              <h1>Time to Get Excited!!!!</h1>
-              <h2><a href="http://slides.html5rocks.com/" target="blank">htmlrocks.com presentation</a></h2>
-            </hgroup>
-          </section>
-        </div> 
-
-        <div class="slide myslide"> 
-          <style> 
-            .intro h1, .intro h2 {
-              color: black;
-            }
-            .intro h1 {
-              letter-spacing: -2px;
-              font-size: 96px;
-            }
-            .intro h2 {
-              margin-top: -5px;
-              font-size: 40px;
-              letter-spacing: -1px;
-            }
-          </style> 
-          <section class="middle intro"> 
-            <hgroup> 
-              <h1> 
-                Whew.
-              </h1> 
-              <h2> 
-                Let's examine those shiny new features in more detail.
-              </h2> 
-            </hgroup> 
-          </section> 
-        </div>
-
-        <div class="slide myslide"> 
-          <header>But First: a concept</header> 
+          <header>Degrade gracefully</header> 
           <section> 
             <p>Web development is tricky because of so many different browser versions.</p>
             <p>Graceful downgrading is the key.</p>
@@ -1017,7 +967,31 @@ socket.<b>onclose</b> = function(event) { alert(“closed”); }
           </section> 
         </div> 
  
- 
+         <div class="slide myslide"> 
+          <header><span class="js">JS APIs</span> <h1>Web Sockets: Details</h1></header> 
+          <section>
+          <h2>Browser Support</h2> 
+          <table class="browser-support">
+            <thead>
+              <tr> <th>IE</th> <th>Firefox</th> <th>Safari</th> <th>Chrome</th> <th>Opera</th> <th>iPhone</th> <th>Android</th> </tr>
+            </thead>
+            <tbody>
+              <tr><td>·<td>4.0+<td>5.0+<td>4.0+<td>10.7+<td>·(as of 4.1)<td>?
+            </tbody>
+          </table>
+          <br>
+          <a href="http://en.wikipedia.org/wiki/WebSockets" target="blank">Source</a>
+
+          <h2>Network Support</h2> 
+          <p>Some proxy servers break web sockets.  Using secure web sockets results in the higest probability of success at this point since proxies will ignore the encrypted traffic.
+
+          <h2>Fall-back Options</h2>
+          <ul>
+            <li>Flash</li>
+            <li>Render dynamic images on the server side</li>
+          </ul>
+          </section>
+        </div>
  
         <div class="slide"> 
           <style> 
