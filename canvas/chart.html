@@ -208,6 +208,14 @@
                     var yPosition = graphEndY - (graphData[i][1] * 2);
                     context.fillRect(xOffset, yPosition, 3, 3);
                 }
+
+                /* alternate solution with a foreach
+                graphData.forEach(function(v){
+					var x = graphStartX + graphWidthX * ((v[0] - minYear)/(maxYear-minYear));
+			    	var y = graphEndY - (2 * v[1]);
+					context.fillRect(x, y, 3, 3);
+				});
+                */
             }
 
             drawAxies();
